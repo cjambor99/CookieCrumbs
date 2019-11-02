@@ -19,5 +19,6 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^getcookies/', include('getcookies.urls')),
     url(r'^cookieTrail/', include('cookieTrail.urls')),
+    url(r'^currentCookies/', include('currentCookies.urls')),
     url(r'^admin/', admin.site.urls)
 ]
