@@ -11,12 +11,16 @@
 
         <title>Cookie Crumbs</title>
         
-        <link rel="stylesheet" href="./style.css">
+                
+        {% load static %}
+
+        <link rel="stylesheet" type="text/css" href="{% static 'getcookies/style.css' %}">
     </head>
     
     <body>
         <div class="banner">
-            <img src="./img/banner.png">
+            {% load static %}
+            <img src="{% static 'images/banner.png' %}">
         </div>
         <!-- ~~~~~ Nav Bar ~~~~~ -->
         <nav class="navbar navbar-default">
@@ -26,19 +30,8 @@
             </ul>
         </nav>
         
-        <div class="center">
-            <form>
-                <div class="form-group row">
-                    <label for="find" class="col-sm-1">Find Cookies</label>
-                    <div class="col-sm-7">
-                        <input type="text" class="form-control" id="find" placeholder="Add URL...">
-                    </div>
-                    <div class="col-sm-2">
-                        <button type="submit" class="btn">Search</button>
-                    </div>
-                </div>
-            </form>
-        </div>
+        <div class="stats">
         
+        </div>
     </body>
 </html>

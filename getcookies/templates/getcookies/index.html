@@ -11,12 +11,16 @@
 
         <title>Cookie Crumbs</title>
         
-        <link rel="stylesheet" href="./style.css">
+        
+        {% load static %}
+
+        <link rel="stylesheet" type="text/css" href="{% static 'getcookies/style.css' %}">
     </head>
     
     <body>
         <div class="banner">
-            <img src="./img/banner.png">
+            {% load static %}
+            <img src="{% static 'images/banner.png' %}">
         </div>
         <!-- ~~~~~ Nav Bar ~~~~~ -->
         <nav class="navbar navbar-default">
