@@ -8,8 +8,5 @@ from django.template import loader
 from django.http import HttpResponse, Http404
 
 def index(request):
-    """template = loader.get_template('getcookies/index.html')
-    return HttpResponse(template.render(request))"""
-
     return render(request, 'getcookies/index.html')
 

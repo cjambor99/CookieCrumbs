@@ -122,7 +122,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_ROOT = ''
+
+STATIC_ROOT = '/cookiecrumbs/getcookies/templates/getcookies/'
+STATIC_URL = '/static/'
 STATIC_URL = '/cookiecrumbs/getcookies/templates/getcookies/'
-STATICFILES_DIRS=("/cookiecrumbs/getcookies/templates/getcookies/",
-)
+STATICFILES_DIRS=("/cookiecrumbs/getcookies/templates/getcookies/",)
