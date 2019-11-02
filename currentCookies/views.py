@@ -3,32 +3,35 @@ import os
 import http.cookies as cookies
 import requests
 from django.http import HttpResponse
+import websockets
+import PyChromeDevTools as devtools
+import time
 
 # Create your views here.
 def displayCookies(request):
-    print("Content-type: text/html\n\n")
+    try:
+        #cookieObjects = []
 
-    #print("""
-    #<html>
-    #<body>
-    #<h1>Display cookies</h1>
-    #""")
+        chrome = devtools.ChromeInterface()
+        chrome.Network.enable()
+        chrome.Page.enable()
 
-    if 'HTTP_COOKIE' in os.environ:
-        cookieList = os.environ['HTTP_COOKIE']
-        print(cookieList)
+        #chrome.Page.navigate(url="http://www.nytimes.com/")
+        #chrome.wait_event("Page.frameStoppedLoading", timeout=60)
 
-        cookieList = cookieList.split('; ')
-        print(cookieList)
+        time.sleep(5)
 
-        for cookie in cookieList:
-            c = cookies.SimpleCookie()
-            c.load(cookie)
-            print(c)
+        cookieList = chrome.Network.getCookies()
+        #cookieList = cookieList.split('; ')
 
-    #print("""
-    #</body>
-    #</html>
-    #""")
+        #for cookie in cookieList:
+        #    c = cookies.SimpleCookie()
+        #    c.load(cookie)
+        #    cookieObjects.append(c)
 
-    return HttpResponse("Cookies returned")
+        #print(cookieObjects)
+
+        return HttpResponse("Number of cookies returned:\n", len(cookieList))
+        #return HttpResponse("Cookies returned:\n", cookieList)
+    except requests.exceptions.ConnectionError:
+        return HttpResponse("Connection refused")
