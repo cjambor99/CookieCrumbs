@@ -11,16 +11,34 @@
 
         <title>Cookie Crumbs</title>
         
-        <!-- ~~~~~ Nav Bar ~~~~~ -->
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-            <ul class="nav navbar-nav">
-                <li><a href="./index.html" title="Link to site home page">Home</a></li>
-                <li><a href="" title="">Current Cookies</a></li>
-            </ul>
-        </nav>
+        <link rel="stylesheet" href="./style.css">
     </head>
     
     <body>
+        <div class="banner">
+            <img src="./img/banner.png">
+        </div>
+        <!-- ~~~~~ Nav Bar ~~~~~ -->
+        <nav class="navbar navbar-default">
+            <ul class="nav navbar-nav">
+                <li><a href="./index.html" title="Link to site home page">Home</a></li>
+                <li><a href="./currentCookies.html" title="">Current Cookies</a></li>
+            </ul>
+        </nav>
+        
+        <div class="center">
+            <form>
+                <div class="form-group row">
+                    <label for="find" class="col-sm-1">Find Cookies</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" id="find" placeholder="Add URL...">
+                    </div>
+                    <div class="col-sm-2">
+                        <button type="submit" class="btn">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
         
     </body>
 </html>
