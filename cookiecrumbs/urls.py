@@ -17,7 +17,8 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^getcookies/', include('getcookies.urls')),
+    url(r'', include('getcookies.urls')),
+    url(r'^cookieCrumbs/', include('getcookies.urls')),
     url(r'^cookieTrail/', include('cookieTrail.urls')),
     url(r'^displayCookies/', include('displayCookies.urls')),
     url(r'^admin/', admin.site.urls)
