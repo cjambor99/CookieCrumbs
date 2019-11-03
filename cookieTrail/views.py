@@ -10,6 +10,8 @@ def index(request):
     chrome.Network.enable()
     chrome.Page.enable()
 
+    var = request.POST.get('find')
+    print("--------------------------------------" + str('find'))
     chrome.Page.navigate(url="https://www.google.com/")
     chrome.wait_event("Page.frameStoppedLoading",timeout=60)
 
