@@ -16,8 +16,10 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+#defining 404 handler
+handler404 = 'cookiecrumbs.views.handler404'
+
 urlpatterns = [
-    url(r'', include('getcookies.urls')),
     url(r'^cookieCrumbs/', include('getcookies.urls')),
     url(r'^cookieTrail/', include('cookieTrail.urls')),
     url(r'^displayCookies/', include('displayCookies.urls')),
